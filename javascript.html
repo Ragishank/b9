@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+
+          mark=[];
+          sum=0;
+          //creating array
+          for(i=0;i<5;i++){
+              a=Number(prompt("enter your mark "+i))
+              mark.push(a)
+          }
+          //display array
+          for (i of mark){
+              console.log(i)
+          }
+
+          //find sum
+          for(i in mark){
+              sum=sum+mark[i];
+              console.log(sum);
+          }
+
+           //check your grade
+           switch (true) {
+               
+                case sum >= 90:
+                    console.log("A");
+                    break;
+                
+                case sum >= 80:
+                    console.log("B");
+                    break;
+
+                case sum >= 70:
+                    console.log("C");
+                    break;
+               
+                case sum >= 60:
+                    console.log("D");
+                    break;
+                default:
+                    console.log("F");
+
+           }
+    </script>
+</body>
+</html>

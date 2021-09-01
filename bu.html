@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" name="fname" id="i1" value="ragisha" readonly>
+    <input type="button" name="" id="" value="edit" onclick="return fnSample(this)">
+    <script>
+        function fnSample(button){
+            if(button.value=='edit'){
+                document.getElementById('i1').readOnly=false
+                button.value="update"
+                button.type="submit"
+                console.log(button.type)
+            }
+        }
+    </script>
+</body>
+</html>

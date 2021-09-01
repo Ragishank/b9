@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        <input type="text" id="user" placeholder="username"><label style="color: red;" id="usererror"></label><br>
+        <input type="password" id="pass"placeholder="password"><label style="color: red;" id="passerror"></label><br>
+        <button onclick="return fnValidate()">Login</button>
+    </form>
+    <script>
+        function fnValidate(){
+            user=document.getElementById('user')
+            pass=document.getElementById('pass')
+            if(user.value=="")
+            {
+                user.style.borderColor="red";
+                user.focus();
+                document.getElementById('usererror').innerHTML="please fill username";
+                return false;
+            }
+            else if(pass.value=="")
+            {
+                pass.style.borderColor="red";
+                pass.focus();
+                document.getElementById('passerror').innerHTML="please fill password";
+                return false;
+            }
+            else{
+                user.style.borderColor="black";
+                pass.style.borderColor="black";
+                document.getElementById('usererror').innerHTML="";
+                document.getElementById('passerror').innerHTML="";
+                return true;
+            }
+
+        }
+    </script>
+</body>
+</html>

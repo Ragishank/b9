@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <button type="submit" onclick="fnCountDown()">start count down</button>
+    <script>
+        count=Number(prompt("enter the count down limit:"))
+        setInterval(function fnCountDown(){
+            
+            while(count>0){
+                document.write(count)
+                count=count-1;
+            }
+        
+            },1000)
+            alert("Time expired") 
+        </script>-->
+<button onclick="myFun()">Try it</button>
+<p> The download will begin in <span id="countdowntimer">  </span> Seconds</p>
+<a href="ass16" id="a1">click</a>
+<script>
+    
+   function myFun() {
+   
+    var timeleft = prompt("Enter Time ")
+    var downloadTimer = setInterval(function(){
+    timeleft--;
+    document.getElementById("countdowntimer").textContent = timeleft;
+    if(timeleft == 0)
+    {
+
+        alert("Time Expired");
+        clearInterval(downloadTimer);
+        
+    }
+         //clearInterval(downloadTimer);
+
+    },1000);          
+ }
+//console.log(document);
+console.log(document.getElementById('a1').id='a2')
+</script> 
+
+
+    
+    
+</body>
+</html>

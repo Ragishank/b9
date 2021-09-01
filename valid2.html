@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            margin:100px 200px;
+            border:solid blue;
+            width: fit-content;
+        }
+        input{
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+  <div >
+      <form action="">
+          <p id="usererror" style="color: red;"></p>
+          <input type="text" placeholder="Username" id="user"><br>
+          <input type="password" placeholder="password" id="pass"><br>
+          <input type="text" placeholder="age" id="age"><br>
+          <label for=""id="gender">Gender</label>
+          <input type="radio" name="gender" value="male" id="me">Male
+          <input type="radio" name="gender" value="female" id="fe">Female<br>
+          <input type="text" id="phone" placeholder="phone"><br>
+          <input type="submit" value="Login" onclick="return validation()">
+      </form>
+  </div>
+  <script>
+      function validation(){
+          user=document.getElementById('user');
+          pass=document.getElementById('pass');
+          age=document.getElementById('age');
+          
+          if (user.value==""){
+              user.style.borderColor="red";
+              user.focus();
+              document.getElementById('usererror').innerHTML="please enter your username";
+              return false;
+          }
+          else if(pass.value=="")
+          {
+              pass.style.borderColor="red";
+              pass.focus();
+              alert("please enter your password");
+              return false;
+          }
+          else if(pass.value.length<8){
+              pass.style.borderColor="red";
+              pass.focus();
+              alert("password have minimum 8 charcters");
+              return false;
+          }
+          else if(age.value=="" || isNaN(age.value))
+          {
+              alert("enter a number");
+              age.focus();
+              return false;
+          }
+          else if(document.getElementById("me").checked=="" && document.getElementById("fe").checked=="" )
+            {
+                alert("Please select gender");
+                document.getElementById("ma").focus();
+                document.getElementById("fe").focus();
+                return false;
+            }
+            else if(document.getElementById('phone').value=="" || document.getElementById('phone').value>=11 || isNaN(document.getElementById('phone').value)){
+                alert("phone number is not valid");
+                document.getElementById('phone').focus()
+                return false;
+            }
+          else{
+              return true;
+          }
+      }
+  </script>
+</body>
+</html>
